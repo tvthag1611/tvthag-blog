@@ -2,7 +2,7 @@ import { getPosts } from "../_services/ghost-client";
 import CardPostHozi from "./CardPostHozi";
 import CardPostVerti from "./CardPostVerti";
 
-const GetFeaturedPost = async () => {
+const GetFeaturedPost: any = async () => {
   const posts = await getPosts(4, true);
 
   return (

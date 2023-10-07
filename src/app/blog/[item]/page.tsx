@@ -52,7 +52,7 @@ export default async function Blog({ params }: { params: { item: string } }) {
   }
   return (
     <main className="min-h-[calc(100vh-165px)]">
-      <div className="container mx-auto my-12">
+      <div className="container mx-auto my-4 md:my-8 lg:my-12 px-4">
         <div className="grid grid-cols-1 gap-2 md:gap-3 lg:gap-4 lg:grid-cols-3 md:grid-cols-2">
           {posts?.map((post, index) => {
             return <CardPostVerti post={post} key={index} />;

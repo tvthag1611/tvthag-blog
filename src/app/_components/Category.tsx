@@ -9,12 +9,12 @@ interface ICategoryProps {
 
 const Category: React.FC<ICategoryProps> = ({ title, onSeeMore, children }) => {
   return (
-    <div className="my-12">
+    <div className="my-4 md:my-8 lg:my-12 dark:text-white">
       <div className="flex justify-between items-center mb-5">
-        <h3 className="text-3xl font-bold">{title}</h3>
+        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">{title}</h3>
         <a
           onClick={onSeeMore}
-          className="text-xl font-bold cursor-pointer hover:underline"
+          className="text-base md:text-lg lg:text-xl font-bold cursor-pointer hover:underline"
         >
           See more
         </a>

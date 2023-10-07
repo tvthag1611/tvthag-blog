@@ -56,15 +56,21 @@ export default async function MediaPage({
 
   return (
     <main className="min-h-[calc(100vh-165px)] p-4">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-center my-20">
-          HELLO! WELCOME TO SUNZINE PHOTO GALLERY WITH CREATIVE & UNIQUE STYLE
-        </h1>
+      <div className="container mx-auto dark:text-white">
+        <div className="my-10 text-center">
+          <h1 className="text-2xl md:text-4xl font-bold uppercase mb-3">
+            Photography
+          </h1>
+          <p>
+            Không phải là chụp ảnh chuyên nghiệp gì đâu, nhưng 100 cái chắc được
+            1 cái 😁
+          </p>
+        </div>
         <ul className="flex items-center justify-center py-4 md:py-8 flex-wrap">
           <li
             className={`${
-              params?.slugs?.[0] ? "" : "active"
-            } text-gray-400 text-base font-medium text-center mx-3 menu-item`}
+              params?.slugs?.[0] ? "" : "active dark:!text-white"
+            } dark:hover:!text-white text-gray-400 text-base font-medium text-center mx-3 uppercase menu-item`}
           >
             <Link href={`/media`}>All categories</Link>
           </li>
@@ -74,8 +80,8 @@ export default async function MediaPage({
                 <span>•</span>
                 <li
                   className={`${
-                    params?.slugs?.[0] === tag ? "active" : ""
-                  } text-gray-400 text-base font-medium text-center mx-3 menu-item`}
+                    params?.slugs?.[0] === tag ? "active dark:!text-white" : ""
+                  } dark:hover:!text-white text-gray-400 uppercase text-base font-medium text-center mx-3 menu-item`}
                 >
                   <Link href={`/media/${tag}`}>{tag}</Link>
                 </li>

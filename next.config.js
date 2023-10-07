@@ -6,6 +6,8 @@ const nextConfig = {
       "www.gravatar.com",
       "static.ghost.org",
       "localhost",
+      "digitalpress.fra1.cdn.digitaloceanspaces.com",
+      "images.unsplash.com",
     ],
     formats: ["image/avif", "image/webp"],
   },

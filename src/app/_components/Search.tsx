@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { FaSearch } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
 import Link from "next/link";
 import searchData from "../../../search.json";
 import type { PostOrPage } from "@tryghost/content-api";
@@ -29,7 +29,7 @@ function Search() {
     <Dialog.Root>
       <Dialog.Trigger asChild>
         <button className="cursor-pointer outline-none" aria-label="Search">
-          <FaSearch />
+          <FiSearch />
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>

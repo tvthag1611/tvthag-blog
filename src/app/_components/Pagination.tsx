@@ -10,7 +10,7 @@ const Pagination = ({ item }: { item?: Pagination }) => {
       <div className="lg:w-3/5 w-full  flex items-center justify-between border-t border-gray-200">
         <Link
           href={`/blog/${prev}`}
-          className="flex items-center pt-3 text-gray-600 hover:text-indigo-700 cursor-pointer"
+          className="flex items-center pt-3 text-gray-600 hover:text-blue-700 cursor-pointer"
         >
           {prev && (
             <>
@@ -52,11 +52,11 @@ const Pagination = ({ item }: { item?: Pagination }) => {
           {Array.from({ length: pages }, (v, i) => (
             <Link
               key={i}
-              className={`text-sm font-medium leading-none cursor-pointer ${
+              className={`text-sm font-medium leading-none cursor-pointer border-t ${
                 page === i + 1
                   ? "text-blue-700 border-blue-400"
-                  : "text-gray-600"
-              } hover:text-blue-700 border-t border-transparent hover:border-blue-400 pt-3 mr-4 px-2`}
+                  : "text-gray-600 border-transparent"
+              } hover:text-blue-700 hover:border-blue-400 pt-3 mr-4 px-2`}
               href={`/blog/${i + 1}`}
             >
               {i + 1}
@@ -65,7 +65,7 @@ const Pagination = ({ item }: { item?: Pagination }) => {
         </div>
         <Link
           href={`/blog/${next}`}
-          className="flex items-center pt-3 text-gray-600 hover:text-indigo-700 cursor-pointer"
+          className="flex items-center pt-3 text-gray-600 hover:text-blue-700 cursor-pointer"
         >
           {next && (
             <>

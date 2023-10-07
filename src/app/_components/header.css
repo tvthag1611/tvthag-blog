@@ -1,0 +1,77 @@
+.hidden-header-mb {
+  height: 0;
+  animation-name: bottomToTop;
+  animation-duration: 0.5s;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.show-header-mb {
+  height: 120px;
+  animation-name: topToBottom;
+  animation-duration: 0.5s;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes topToBottom {
+  from {
+    height: 0;
+  }
+  to {
+    height: 120px;
+  }
+}
+
+@keyframes bottomToTop {
+  from {
+    height: 120px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+#hamburger {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+#hamburger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgb(var(--foreground-rgb));
+  border-radius: 10px;
+  transition: all 0.15s ease;
+}
+
+#hamburger span:first-child {
+  top: 17px;
+}
+
+#hamburger span:nth-child(2) {
+  top: 25px;
+}
+
+#hamburger span:last-child {
+  top: 33px;
+}
+
+#hamburger.close span:first-child {
+  top: 15px;
+  transform: translate(-12px, 10px) rotate(135deg);
+}
+
+#hamburger.close span:nth-child(2) {
+  left: -20px;
+  opacity: 0;
+  display: none;
+}
+#hamburger.close span:last-child {
+  top: 15px;
+  transform: translate(-12px, 10px) rotate(-135deg);
+}

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getAllImages, IImage } from "../_services/cloudinary.service";
 
-const GetMedia = async () => {
+const GetMedia: any = async () => {
   const images = await getAllImages("", { max_results: 12 });
 
   const resources: IImage[][] = [[], [], [], []];

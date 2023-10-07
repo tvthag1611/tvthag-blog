@@ -30,7 +30,7 @@
 .menu-item:hover::before {
   animation-name: leftToRight;
   animation-duration: 0.5s;
-  transition: cubic-bezier();
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   width: 100%;
 }
 

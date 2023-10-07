@@ -46,10 +46,13 @@ export const getAllImages = (tag: string, params?: IImageCloudinary) => {
 };
 
 export const getAllTags = () => {
-  return fetch(`https://api.cloudinary.com/v1_1/${cloudName}/tags/image`, {
-    method: "GET",
-    headers: {
-      Authorization: `Basic ${btoa(apiKey + ":" + apiSecret)}`,
-    },
-  }).then((response) => response.json());
+  return fetch(
+    `https://api.cloudinary.com/v1_1/${cloudName}/tags/image?max_results=100`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Basic ${btoa(apiKey + ":" + apiSecret)}`,
+      },
+    }
+  ).then((response) => response.json());
 };

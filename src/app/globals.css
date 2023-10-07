@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url(./font.css);
 
 :root {
   --foreground-rgb: 45, 55, 72;
@@ -18,4 +19,5 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  font-family: "Manrope", sans-serif;
 }

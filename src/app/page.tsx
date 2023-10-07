@@ -7,18 +7,23 @@ import Image from "next/image";
 import { Settings } from "@tryghost/content-api";
 
 export async function generateMetadata() {
-  const Metadata = await getNavigation();
+  const metadata = await getNavigation();
 
-  if (Metadata) {
-    return {
-      title: Metadata.meta_title,
-      description: Metadata.meta_description,
-      keywords: ["Blog", "Photos", "Tran Van Thang", "tvthag"],
-    };
-  }
   return {
-    title: "tvthag's blog",
-    description: "Ghi lại những điều hay ho của cuộc sống",
+    title: metadata?.meta_title || "tvthag",
+    description:
+      metadata?.meta_description || "Ghi lại những điều hay ho của cuộc sống",
+    facebook: {
+      images: { url: metadata?.og_image, alt: metadata?.og_title },
+      title: metadata?.og_title,
+      description: metadata?.og_description,
+    },
+    twitter: {
+      images: { url: metadata?.twitter_image, alt: metadata?.twitter_title },
+      title: metadata?.twitter_title,
+      description: metadata?.twitter_description,
+    },
+    keywords: ["Blog", "Photos", "Tran Van Thang", "tvthag"],
   };
 }
 
@@ -32,14 +37,18 @@ export default async function Home() {
           src={settings?.cover_image || ""}
           alt={settings?.meta_title || ""}
           fill
-          className="w-full h-full object-cover absolute"
+          className="w-full h-full object-cover absolute brightness-80"
         />
-        <div className="relative container flex flex-col justify-center h-full mx-auto">
-          <h1 className="text-6xl font-bold">{settings?.meta_title}</h1>
-          <p className="text-3xl text-gray-700">{settings?.meta_description}</p>
+        <div className="relative container flex flex-col justify-end h-full mx-auto px-4 pb-10 text-white">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+            Trần Văn Thắng
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl mt-4">
+            {settings?.description}
+          </p>
         </div>
       </div>
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <FeaturedPost>
           <GetFeaturedPost />
         </FeaturedPost>
