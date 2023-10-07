@@ -13,7 +13,7 @@ export async function getNavigation() {
   });
 }
 
-export async function getPosts(limit?: number, featured?: boolean) {
+export async function getPosts(limit?: number | string, featured?: boolean) {
   return await api.posts
     .browse({
       include: ["tags", "authors"],
@@ -27,7 +27,7 @@ export async function getPosts(limit?: number, featured?: boolean) {
     });
 }
 
-export async function getPaginationPosts(limit: number, page: number) {
+export async function getPaginationPosts(limit: number | string, page: number) {
   return await api.posts
     .browse({
       include: ["tags", "authors"],

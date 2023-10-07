@@ -29,7 +29,7 @@ export async function generateMetadata() {
 }
 
 export async function generateStaticParams() {
-  const posts: PostsOrPages = await getPosts(9);
+  const posts: PostsOrPages = await getPosts("all");
 
   let paginationItem: { item: string }[] = [];
 
@@ -45,7 +45,7 @@ export async function generateStaticParams() {
 export default async function Blog({ params }: { params: { item: string } }) {
   let getParams: number = Number.parseInt(params.item);
 
-  const posts = await getPaginationPosts(1, getParams);
+  const posts = await getPaginationPosts(9, getParams);
 
   if (posts?.length === 0) {
     notFound();
