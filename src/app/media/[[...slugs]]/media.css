@@ -1,0 +1,44 @@
+.menu-item {
+  position: relative;
+  cursor: pointer;
+  padding: 0px 6px;
+}
+
+.menu-item::before {
+  content: "";
+  width: 0;
+  height: 6px;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  background-color: #0ece91;
+  z-index: -1;
+}
+
+.menu-item.active {
+  color: rgb(var(--foreground-rgb));
+}
+
+.menu-item:hover {
+  color: rgb(var(--foreground-rgb));
+}
+
+.menu-item.active::before {
+  width: 100%;
+}
+
+.menu-item:hover::before {
+  animation-name: leftToRight;
+  animation-duration: 0.5s;
+  transition: cubic-bezier();
+  width: 100%;
+}
+
+@keyframes leftToRight {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
