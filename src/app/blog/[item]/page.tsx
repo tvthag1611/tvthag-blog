@@ -22,6 +22,10 @@ export async function generateMetadata() {
       },
     };
   }
+  return {
+    title: "List post",
+    description: "This is list post",
+  };
 }
 
 export async function generateStaticParams() {

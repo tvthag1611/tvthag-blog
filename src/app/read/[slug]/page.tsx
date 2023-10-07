@@ -35,6 +35,10 @@ export async function generateMetadata({
       },
     };
   }
+  return {
+    title: "Detail post",
+    description: "This is detail post",
+  };
 }
 
 export async function generateStaticParams() {

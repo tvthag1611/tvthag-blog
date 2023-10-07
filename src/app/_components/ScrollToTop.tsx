@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ScrollToTop = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false);
@@ -20,7 +20,10 @@ const ScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  window.addEventListener("scroll", scrollFunction);
+  useEffect(() => {
+    window.addEventListener("scroll", scrollFunction);
+  }, []);
+
   return (
     <button
       type="button"

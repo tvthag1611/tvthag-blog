@@ -16,6 +16,10 @@ export async function generateMetadata() {
       keywords: ["Blog", "Photos", "Tran Van Thang", "tvthag"],
     };
   }
+  return {
+    title: "tvthag's blog",
+    description: "Ghi lại những điều hay ho của cuộc sống",
+  };
 }
 
 export default async function Home() {
@@ -37,11 +41,9 @@ export default async function Home() {
       </div>
       <div className="container mx-auto">
         <FeaturedPost>
-          {/* @ts-expect-error */}
           <GetFeaturedPost />
         </FeaturedPost>
         <NewMedia>
-          {/* @ts-expect-error */}
           <GetMedia />
         </NewMedia>
       </div>
