@@ -14,12 +14,12 @@ function SocialIcons({ setting }: { setting: Settings }) {
   return (
     <div className="flex">
       <ul className="flex flex-wrap items-center p-4 md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-        <li
+        {/* <li
           className="flex items-center py-2 pl-3 pr-4 text-xl hover:text-blue-700 dark:hover:text-blue-700 rounded md:p-0 dark:text-white"
           aria-current="page"
         >
           <Search />
-        </li>
+        </li> */}
 
         <li>
           <Link
