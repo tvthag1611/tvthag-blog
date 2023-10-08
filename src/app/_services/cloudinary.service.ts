@@ -1,6 +1,7 @@
 interface IImageCloudinary {
   max_results?: number;
   next_cursor?: string;
+  context?: boolean;
 }
 
 export interface IImage {
@@ -13,6 +14,12 @@ export interface IImage {
   height: number;
   folder: string;
   url: string;
+  context?: {
+    custom: {
+      alt: string;
+      caption: string;
+    };
+  };
 }
 
 const cloudName = process.env.CLOUDINARY_CLOUD_NAME as string;
@@ -41,6 +48,7 @@ export const getAllImages = (tag: string, params?: IImageCloudinary) => {
       headers: {
         Authorization: `Basic ${btoa(apiKey + ":" + apiSecret)}`,
       },
+      next: { revalidate: 10 },
     }
   ).then((response) => response.json());
 };
@@ -53,6 +61,7 @@ export const getAllTags = () => {
       headers: {
         Authorization: `Basic ${btoa(apiKey + ":" + apiSecret)}`,
       },
+      next: { revalidate: 10 },
     }
   ).then((response) => response.json());
 };
