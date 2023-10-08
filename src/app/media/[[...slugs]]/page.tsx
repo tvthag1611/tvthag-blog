@@ -34,7 +34,9 @@ export default async function MediaPage({
 }) {
   const images = await getAllImages(params?.slugs?.[0], {
     max_results: 100,
+    context: true,
   });
+
   const imageLength = images?.resources?.length || 0;
   const resources: IImage[][] = [[], [], [], []];
   images?.resources?.forEach((image: IImage, index: number) => {
@@ -80,7 +82,9 @@ export default async function MediaPage({
                 <span>•</span>
                 <li
                   className={`${
-                    params?.slugs?.[0] === tag ? "active dark:!text-white" : ""
+                    decodeURI(params?.slugs?.[0]) === tag
+                      ? "active dark:!text-white"
+                      : ""
                   } dark:hover:!text-white text-gray-400 uppercase text-base font-medium text-center mx-3 menu-item`}
                 >
                   <Link href={`/media/${tag}`}>{tag}</Link>
@@ -101,7 +105,7 @@ export default async function MediaPage({
                     <Image
                       className="h-auto max-w-full rounded-lg"
                       src={item.url}
-                      alt={item.public_id || ""}
+                      alt={item?.context?.custom?.alt || item.public_id || ""}
                       width={item.width}
                       height={item.height}
                     />

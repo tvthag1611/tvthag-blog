@@ -4,18 +4,19 @@ import { getAllImages, IImage } from "../_services/cloudinary.service";
 const GetMedia: any = async () => {
   const images = await getAllImages("", { max_results: 12 });
 
+  const imageLength = images?.resources?.length || 0;
   const resources: IImage[][] = [[], [], [], []];
   images?.resources?.forEach((image: IImage, index: number) => {
-    if (index < 3) {
+    if (index < imageLength / 4) {
       resources[0]?.push(image);
     }
-    if (index >= 3 && index < 6) {
+    if (index >= imageLength / 4 && index < (imageLength * 2) / 4) {
       resources[1]?.push(image);
     }
-    if (index >= 6 && index < 9) {
+    if (index >= (imageLength * 2) / 4 && index < (imageLength * 3) / 4) {
       resources[2]?.push(image);
     }
-    if (index >= 9) {
+    if (index >= (imageLength * 3) / 4) {
       resources[3]?.push(image);
     }
   });

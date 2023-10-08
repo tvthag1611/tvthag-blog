@@ -1,4 +1,4 @@
-import { FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaLinkedin, FaFacebook, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import type { Settings } from "@tryghost/content-api";
 
@@ -17,6 +17,16 @@ function Footer({ setting }: { setting: Settings }) {
 
         <div className="flex md:order-2">
           <ul className="flex flex-row md:space-x-8 md:mt-0 md:text-sm font-medium">
+            <li>
+              <Link
+                target="_blank"
+                href={`https://www.youtube.com/c/TVTOfficial`}
+                className="block py-2 pl-3 pr-4 text-xl rounded hover:text-blue-700 dark:hover:text-blue-700 md:p-0 dark:text-white"
+                aria-current="page"
+              >
+                <FaYoutube />
+              </Link>
+            </li>
             <li>
               <Link
                 target="_blank"

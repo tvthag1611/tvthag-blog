@@ -1,6 +1,12 @@
 "use client";
 
-import { FaFacebook, FaLinkedin, FaSun, FaRegMoon } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaLinkedin,
+  FaSun,
+  FaRegMoon,
+  FaYoutube,
+} from "react-icons/fa";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -20,6 +26,17 @@ function SocialIcons({ setting }: { setting: Settings }) {
         >
           <Search />
         </li> */}
+
+        <li>
+          <Link
+            target="_blank"
+            href={`https://www.youtube.com/c/TVTOfficial`}
+            className="block py-2 pl-3 pr-4 text-xl rounded hover:text-blue-700 dark:hover:text-blue-700 md:p-0 dark:text-white"
+            aria-current="page"
+          >
+            <FaYoutube />
+          </Link>
+        </li>
 
         <li>
           <Link
