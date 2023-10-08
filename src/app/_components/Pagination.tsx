@@ -5,6 +5,8 @@ const Pagination = ({ item }: { item?: Pagination }) => {
   if (!item) return null;
   const { page, pages, next, prev } = item;
 
+  if (!next && !prev) return null;
+
   return (
     <div className="flex items-center justify-center py-10">
       <div className="lg:w-3/5 w-full  flex items-center justify-between border-t border-gray-200">
