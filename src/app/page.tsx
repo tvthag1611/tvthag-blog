@@ -12,7 +12,7 @@ export async function generateMetadata() {
   return {
     title: metadata?.meta_title || "tvthag",
     description:
-      metadata?.meta_description || "Ghi lại những điều hay ho của cuộc sống",
+      metadata?.meta_description || "Capture the good things in my life",
     facebook: {
       images: { url: metadata?.og_image, alt: metadata?.og_title },
       title: metadata?.og_title,
@@ -41,7 +41,7 @@ export default async function Home() {
         />
         <div className="relative container flex flex-col justify-end h-full mx-auto px-4 pb-10 text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            Trần Văn Thắng
+            Tran Van Thang
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl mt-4">
             {settings?.description}

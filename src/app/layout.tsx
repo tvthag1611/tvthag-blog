@@ -12,7 +12,7 @@ export default function RootLayout({
   const settings = use(getNavigation());
 
   return (
-    <html lang="vi">
+    <html lang="en">
       <body>
         <BlogLayout setting={settings as Settings}>{children}</BlogLayout>
       </body>
