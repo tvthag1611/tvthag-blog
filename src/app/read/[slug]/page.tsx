@@ -30,7 +30,7 @@ export async function generateMetadata({
             url: metaData.feature_image,
           },
         ],
-        locale: "vi",
+        locale: "en",
         type: "website",
       },
     };
@@ -89,7 +89,7 @@ export default async function Read({ params }: { params: { slug: string } }) {
 
             <p className="text-base font-light text-gray-500 dark:text-gray-400">
               {" "}
-              {getPost.reading_time} phút đọc
+              {getPost.reading_time}m time read
             </p>
           </div>
           <div>

@@ -20,7 +20,7 @@ const CardPostVerti = ({ post }: { post: PostOrPage }) => {
           <p className="my-2 md:my-4 line-clamp-3">{post.excerpt}</p>
           <div className="flex flex-wrap justify-between items-center gap-2 text-sm text-gray-500">
             <p>{getDateFormat(post.published_at)}</p>
-            <p>{post.reading_time} phút đọc</p>
+            <p>{post.reading_time}m read time</p>
           </div>
         </div>
       </div>

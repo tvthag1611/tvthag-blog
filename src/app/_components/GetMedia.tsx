@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getAllImages, IImage } from "../_services/cloudinary.service";
+import Photo from "./Photo";
 
 const GetMedia: any = async () => {
   const images = await getAllImages("", { max_results: 12 });
@@ -29,13 +29,7 @@ const GetMedia: any = async () => {
             {resource?.map((item) => {
               return (
                 <div key={item.asset_id}>
-                  <Image
-                    className="h-auto max-w-full rounded-lg"
-                    src={item.url}
-                    alt={item.public_id || ""}
-                    width={item.width}
-                    height={item.height}
-                  />
+                  <Photo item={item} />
                 </div>
               );
             })}

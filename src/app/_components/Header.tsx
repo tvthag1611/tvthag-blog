@@ -2,7 +2,6 @@ import Link from "next/link";
 import SocialIcons from "./SocialIcons";
 import Image from "next/image";
 import type { Settings } from "@tryghost/content-api";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import "./header.css";
 

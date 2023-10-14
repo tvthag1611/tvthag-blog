@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import {
@@ -7,6 +6,7 @@ import {
   IImage,
 } from "../../_services/cloudinary.service";
 import "./media.css";
+import Photo from "@/app/_components/Photo";
 
 export async function generateMetadata({
   params,
@@ -14,9 +14,11 @@ export async function generateMetadata({
   params: { slugs: string[] };
 }) {
   return {
-    title: `Media${params?.slugs?.[0] ? ` - ${params?.slugs?.[0]}` : ""}`,
+    title: `Media ${
+      params?.slugs?.[0] ? ` - ${decodeURI(params?.slugs?.[0])}` : ""
+    }`,
     description: "tvthag's media",
-    keywords: ["photos", "media", "tvthag"],
+    keywords: ["photos", "media", "tvthag", decodeURI(params?.slugs?.[0])],
   };
 }
 
@@ -64,8 +66,7 @@ export default async function MediaPage({
             Photography
           </h1>
           <p>
-            Không phải là chụp ảnh chuyên nghiệp gì đâu, nhưng 100 cái chắc được
-            1 cái 😁
+            {`It's not professional photography, but out of 100, i'm sure to get 1 😁`}
           </p>
         </div>
         <ul className="flex items-center justify-center py-4 md:py-8 flex-wrap">
@@ -102,13 +103,7 @@ export default async function MediaPage({
               {resource?.map((item) => {
                 return (
                   <div key={item.asset_id}>
-                    <Image
-                      className="h-auto max-w-full rounded-lg"
-                      src={item.url}
-                      alt={item?.context?.custom?.alt || item.public_id || ""}
-                      width={item.width}
-                      height={item.height}
-                    />
+                    <Photo item={item} />
                   </div>
                 );
               })}
