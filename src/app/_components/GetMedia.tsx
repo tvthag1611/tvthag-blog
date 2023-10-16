@@ -23,19 +23,7 @@ const GetMedia: any = async () => {
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 items-start">
-      {resources?.map((resource, index) => {
-        return (
-          <div className="grid gap-4" key={index}>
-            {resource?.map((item) => {
-              return (
-                <div key={item.asset_id}>
-                  <Photo item={item} />
-                </div>
-              );
-            })}
-          </div>
-        );
-      })}
+      <Photo resources={resources} />
     </div>
   );
 };
