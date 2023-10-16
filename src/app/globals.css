@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @import url(./font.css);
+@import url(./image.css);
 
 :root {
   --foreground-rgb: 45, 55, 72;
