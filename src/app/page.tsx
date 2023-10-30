@@ -37,7 +37,7 @@ export default async function Home() {
           src={settings?.cover_image || ""}
           alt={settings?.meta_title || ""}
           fill
-          className="w-full h-full object-cover absolute brightness-80"
+          className="w-full h-full object-cover absolute brightness-80 object-bottom"
         />
         <div className="relative container flex flex-col justify-end h-full mx-auto px-4 pb-10 text-white">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
